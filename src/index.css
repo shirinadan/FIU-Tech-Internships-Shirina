@@ -442,7 +442,7 @@
   .fiu-college-grid {
     grid-template-columns: 1fr;
   }
-
+  
   .fiu-college-card {
     grid-column: auto;
     min-height: auto;
