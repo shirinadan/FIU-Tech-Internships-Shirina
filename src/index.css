@@ -1,101 +1,294 @@
+@import url("https://use.typekit.net/erk8tyy.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    color-scheme: light;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Onyx semantic tokens mapped to existing app variables */
+    --background: 228 20% 96%;            /* Surface/primary #F2F2F7 */
+    --foreground: 217 78% 14%;            /* Text/primary #081E3F */
+
+    --card: 0 0% 100%;                    /* Surface/secondary #FFFFFF */
+    --card-foreground: 217 78% 14%;       /* Text/primary #081E3F */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 217 78% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 78% 14%;               /* Button/primary #081E3F */
+    --primary-foreground: 0 0% 100%;      /* Text/invert #FFFFFF */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 216 21% 88%;             /* Button/secondary / Border/primary family */
+    --secondary-foreground: 217 78% 14%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 228 15% 92%;                 /* neutral/150 #EFF0F4 */
+    --muted-foreground: 216 19% 43%;      /* Text/secondary #586783 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 61% 55%;                 /* colorgold175 #D1A644 */
+    --accent-foreground: 217 78% 14%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 44%;            /* color/red/200 #E10000 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 216 21% 88%;                /* Border/primary #E0E3E8 */
+    --input: 216 21% 88%;                 /* Surface/category/input #E0E3E8 */
+    --ring: 217 90% 41%;                  /* color/blue/200 #0A58CA */
 
-    --radius: 0.5rem;
+    --radius: 1.5rem;                     /* Radius/24 */
 
-    --sidebar-background: 0 0% 98%;
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 217 78% 14%;
+    --sidebar-primary: 217 78% 14%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 20% 96%;
+    --sidebar-accent-foreground: 217 78% 14%;
+    --sidebar-border: 216 21% 88%;
+    --sidebar-ring: 217 90% 41%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Extra Onyx tokens for direct use */
+    --surface-primary: #F2F2F7;
+    --surface-secondary: #FFFFFF;
+    --surface-input: #E0E3E8;
+    --surface-academic: #E7F0FF;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --text-primary: #081E3F;
+    --text-secondary: #586783;
+    --text-invert: #FFFFFF;
+    --text-emphasis: #0A58CA;
+    --text-positive: #038577;
+    --text-negative: #E10000;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --button-primary: #081E3F;
+    --button-secondary: #E0E3E8;
+    --button-tertiary: #FFFFFF;
+    --button-emphasis: #0D6EFD;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --border-primary: #E0E3E8;
+    --border-secondary: #081E3F;
+    --border-tertiary: #CBD0D8;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --brand-fiu-blue: #081E3F;
+    --brand-gold: #D1A644;
+    --brand-gold-strong: #B6862C;
 
-    --sidebar-border: 220 13% 91%;
+    --success: #16AE9D;
+    --success-strong: #038577;
+    --warning: #9F5109;
+    --danger: #E10000;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-14: 56px;
+    --space-16: 64px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-3xl: 40px;
+
+    --font-sans: "Proxima Nova", "Inter", ui-sans-serif, system-ui, sans-serif;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    color-scheme: dark;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --background: 222 60% 3%;             /* Surface/primary dark #060B16 */
+    --foreground: 216 21% 88%;            /* Text/primary dark #E0E3E8 */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --card: 217 29% 11%;                  /* Surface/secondary dark #1D2534 */
+    --card-foreground: 216 21% 88%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --popover: 217 29% 11%;
+    --popover-foreground: 216 21% 88%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --primary: 217 90% 41%;               /* Button/primary dark #0A58CA */
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 220 38% 8%;              /* Button/secondary dark #111725 */
+    --secondary-foreground: 216 21% 88%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 217 29% 11%;
+    --muted-foreground: 218 21% 80%;      /* Text/secondary dark #CBD0D8 */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 40 61% 55%;                 /* gold remains primary accent */
+    --accent-foreground: 216 21% 88%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --destructive: 0 100% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 19% 31%;                /* Border/primary dark #3F4B5D */
+    --input: 217 29% 11%;                 /* Surface/category/input dark #1D2534 */
+    --ring: 214 97% 71%;                  /* color/blue/100 #6EA8FE */
+
+    --sidebar-background: 217 29% 11%;
+    --sidebar-foreground: 216 21% 88%;
+    --sidebar-primary: 217 90% 41%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
+    --sidebar-accent: 220 38% 8%;
+    --sidebar-accent-foreground: 216 21% 88%;
+    --sidebar-border: 217 19% 31%;
+    --sidebar-ring: 214 97% 71%;
 
-@layer base {
+    --surface-primary: #060B16;
+    --surface-secondary: #1D2534;
+    --surface-input: #1D2534;
+    --surface-academic: #052C65;
+
+    --text-primary: #E0E3E8;
+    --text-secondary: #CBD0D8;
+    --text-invert: #E0E3E8;
+    --text-emphasis: #6EA8FE;
+    --text-positive: #16AE9D;
+    --text-negative: #E10000;
+
+    --button-primary: #0A58CA;
+    --button-secondary: #111725;
+    --button-tertiary: #111725;
+    --button-emphasis: #0D6EFD;
+
+    --border-primary: #3F4B5D;
+    --border-secondary: #586783;
+    --border-tertiary: #586783;
+  }
+
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--surface-primary);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+}
+
+@layer components {
+  .onyx-shell {
+    background: var(--surface-primary);
+    min-height: 100vh;
+  }
+
+  .onyx-card {
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+  }
+
+  .onyx-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .onyx-button-primary {
+    background: var(--button-primary);
+    color: var(--text-invert);
+  }
+
+  .onyx-button-primary:hover {
+    filter: brightness(1.05);
+  }
+
+  .onyx-button-secondary {
+    background: var(--button-secondary);
+    color: var(--text-primary);
+  }
+
+  .onyx-button-tertiary {
+    background: var(--button-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+  }
+
+  .onyx-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    padding: 4px 12px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+
+  .onyx-badge-general {
+    background: var(--brand-fiu-blue);
+    color: #fff;
+  }
+
+  .onyx-badge-academic {
+    background: #E7F0FF;
+    color: #081E3F;
+    border: 1px solid #0A58CA;
+    border-radius: var(--radius-lg);
   }
 }
