@@ -8,34 +8,24 @@
   :root {
     --background: 228 20% 96%;
     --foreground: 217 78% 14%;
-
     --card: 0 0% 100%;
     --card-foreground: 217 78% 14%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 217 78% 14%;
-
     --primary: 217 78% 14%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 216 21% 88%;
     --secondary-foreground: 217 78% 14%;
-
     --muted: 228 15% 92%;
     --muted-foreground: 216 19% 43%;
-
     --accent: 40 61% 55%;
     --accent-foreground: 217 78% 14%;
-
     --destructive: 0 100% 44%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 216 21% 88%;
     --input: 216 21% 88%;
     --ring: 217 90% 41%;
-
     --radius: 1.5rem;
-
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 217 78% 14%;
     --sidebar-primary: 217 78% 14%;
@@ -44,7 +34,6 @@
     --sidebar-accent-foreground: 217 78% 14%;
     --sidebar-border: 216 21% 88%;
     --sidebar-ring: 217 90% 41%;
-
     --fiu-blue: #081E3F;
     --fiu-gold: #D1A644;
     --surface-page: #F2F2F7;
@@ -55,7 +44,6 @@
     --text-muted: #8B99AD;
     --border-soft: #E0E3E8;
     --link-blue: #0A58CA;
-
     --font-sans: "Proxima Nova", "Inter", ui-sans-serif, system-ui, sans-serif;
   }
 
@@ -79,7 +67,6 @@
     --border: 217 19% 31%;
     --input: 217 29% 11%;
     --ring: 214 97% 71%;
-
     --fiu-blue: #081E3F;
     --fiu-gold: #D1A644;
     --surface-page: #060B16;
@@ -442,7 +429,7 @@
   .fiu-college-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .fiu-college-card {
     grid-column: auto;
     min-height: auto;
@@ -458,5 +445,3 @@
     line-height: 28px;
   }
 }
-give me everything modified and tell me what files to delete too
-</query>
