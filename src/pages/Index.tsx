@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import Logo from '../images/fiu-kfscis-logo.png';
+import fiuLogo from '../images/fiu-kfscis-logo.png';
 import FloatingBubble from '../components/FloatingBubble';
 import { useNavigate } from 'react-router-dom';
 
@@ -98,7 +98,7 @@ const Index = () => {
       aria-label="Go to homepage"
     >
       <img
-        src={Logo}
+        src={fiuLogo}
         alt="FIU KFSCIS logo"
         className="h-14 sm:h-16 md:h-20 w-auto object-contain shrink-0"
         style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
