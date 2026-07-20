@@ -61,16 +61,16 @@ const Index = () => {
   };
 
   return (
-    <div
-      className="min-h-screen overflow-hidden relative"
-      style={{
-        background: `
-          radial-gradient(ellipse at 20% 30%, ${FIU.blueShade2} 0%, transparent 55%),
-          radial-gradient(ellipse at 80% 70%, #0D1F3C 0%, transparent 55%),
-          ${FIU.blue}
-        `,
-      }}
-    >
+  <div
+  className="min-h-screen overflow-hidden relative"
+  style={{
+    background: `
+    radial-gradient(ellipse at 20% 30%, ${FIU.blueShade2} 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, #0D1F3C 0%, transparent 55%),
+    ${FIU.blue}
+    `,
+  }}
+  >
       {/* ── Subtle geometric texture overlay ── */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -89,52 +89,39 @@ const Index = () => {
         <div className="absolute rounded-full" style={{ width: 180, height: 180, top: '40%', right: '5%', background: `radial-gradient(circle, ${FIU.cyan}15 0%, transparent 70%)`, animation: 'pulse 5s ease-in-out infinite 2s' }} />
       </div>
 
-      {/* ── Main title ── */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 text-center w-[90vw] max-w-3xl px-4">
-        <h1
-          className="text-4xl sm:text-5xl md:text-7xl pb-2 font-extrabold leading-tight"
-          style={{
-            fontFamily: "'Georgia', 'Times New Roman', serif",
-            letterSpacing: '-0.02em',
-            background: `linear-gradient(90deg, ${FIU.brightGold} 0%, #FFE066 40%, ${FIU.magenta} 100%)`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            filter: 'drop-shadow(0 2px 24px rgba(255,204,0,0.18))',
-          }}
+      {/* ── Navbar brand ── */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 w-[92vw] max-w-5xl px-4">
+      <div className="flex items-center justify-center md:justify-start">
+        <button
+        onClick={() => navigate('/')}
+        className="flex items-center gap-4 bg-transparent border-none cursor-pointer p-0 text-left"
+        aria-label="Go to homepage"
         >
-          FIU KFSCIS
-        </h1>
-
-        {/* Gold underline bar */}
-        <div
-          style={{
-            height: 3,
-            borderRadius: 2,
-            background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
-            margin: '6px auto 0',
-            width: '70%',
-          }}
-        />
-
-        <p
+          <img
+          src="/images/fiu-kfscis-logo.svg"
+          alt="FIU KFSCIS logo"
+          className="h-14 sm:h-16 md:h-20 w-auto object-contain shrink-0"
+          style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
+          />
+          
+          <p
           className="mt-3 text-sm sm:text-base md:text-xl font-semibold uppercase"
           style={{ color: FIU.brightGold, opacity: 0.85, letterSpacing: '0.12em' }}
-        >
-          Sprinternship™ — Our Partnership With Break Through Tech
-        </p>
-      </div>
-
-      {/* ── Central logo ── */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <button
-          onClick={() => navigate('/')}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer bg-transparent border-none"
-          style={{ filter: `drop-shadow(0 0 18px ${FIU.brightGold}55)` }}
-        >
-          <Logo />
-        </button>
-      </div>
+          >
+            Sprinternship™ — Our Partnership With Break Through Tech
+            </p>
+            </div>
+            
+            {/* Gold underline bar */}
+            <div
+            style={{
+              height: 3,
+              borderRadius: 2,
+              background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
+              margin: '6px auto 0',
+              width: '70%',
+            }}
+            />
 
       {/* ── Floating project bubbles ── */}
       {bubbles.map((bubble) => (
