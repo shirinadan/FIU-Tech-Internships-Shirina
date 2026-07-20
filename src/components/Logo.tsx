@@ -34,7 +34,7 @@ const Logo = () => {
         {/* Photo */}
         <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-white">
           <img
-            src="fiu-logo.png"
+            src="fiu-kfscis-logo.png"
             alt="Avatar"
             className="max-w-full max-h-full object-contain"
           />
