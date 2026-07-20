@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import fiuLogo from 'src/images/fiu-kfscis-logo.png';
+import fiuLogo from '../images/fiu-kfscis-logo.png';
 import FloatingBubble from '../components/FloatingBubble';
 import { useNavigate } from 'react-router-dom';
 
