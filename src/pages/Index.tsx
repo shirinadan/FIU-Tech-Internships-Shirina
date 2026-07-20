@@ -90,38 +90,42 @@ const Index = () => {
       </div>
 
       {/* ── Navbar brand ── */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 w-[92vw] max-w-5xl px-4">
-      <div className="flex items-center justify-center md:justify-start">
-        <button
-        onClick={() => navigate('/')}
-        className="flex items-center gap-4 bg-transparent border-none cursor-pointer p-0 text-left"
-        aria-label="Go to homepage"
-        >
-          <img
-          src="/images/fiu-kfscis-logo.svg"
-          alt="FIU KFSCIS logo"
-          className="h-14 sm:h-16 md:h-20 w-auto object-contain shrink-0"
-          style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
-          />
-          
-          <p
+<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 w-[92vw] max-w-5xl px-4">
+  <div className="flex items-center justify-center md:justify-start">
+    <button
+      onClick={() => navigate('/')}
+      className="flex items-center gap-4 bg-transparent border-none cursor-pointer p-0 text-left"
+      aria-label="Go to homepage"
+    >
+      <img
+        src="/images/fiu-kfscis-logo.svg"
+        alt="FIU KFSCIS logo"
+        className="h-14 sm:h-16 md:h-20 w-auto object-contain shrink-0"
+        style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
+      />
+
+      <div className="flex flex-col">
+        <p
           className="mt-3 text-sm sm:text-base md:text-xl font-semibold uppercase"
           style={{ color: FIU.brightGold, opacity: 0.85, letterSpacing: '0.12em' }}
-          >
-            Sprinternship™ — Our Partnership With Break Through Tech
-            </p>
-            </div>
-            
-            {/* Gold underline bar */}
-            <div
-            style={{
-              height: 3,
-              borderRadius: 2,
-              background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
-              margin: '6px auto 0',
-              width: '70%',
-            }}
-            />
+        >
+          Sprinternship™ — Our Partnership With Break Through Tech
+        </p>
+
+        {/* Gold underline bar */}
+        <div
+          style={{
+            height: 3,
+            borderRadius: 2,
+            background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
+            margin: '6px auto 0',
+            width: '70%',
+          }}
+        />
+      </div>
+    </button>
+  </div>
+</div>
 
       {/* ── Floating project bubbles ── */}
       {bubbles.map((bubble) => (
