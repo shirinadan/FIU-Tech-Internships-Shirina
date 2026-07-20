@@ -160,7 +160,7 @@ const Index = () => {
             aria-label="Go to homepage"
           >
             <img
-              src={`${import.meta.env.BASE_URL}fiu-kfscis-logo.png`}
+              src={`/public/fiu-kfscis-logo.png`}
               alt="FIU KFSCIS logo"
               className="h-16 sm:h-20 md:h-24 w-auto object-contain"
               style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
