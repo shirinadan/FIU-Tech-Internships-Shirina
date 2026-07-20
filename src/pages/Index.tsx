@@ -1,19 +1,28 @@
-
 import React, { useEffect, useState } from 'react';
-import fiuLogo from '/public/fiu-kfscis-logo.png';
 import FloatingBubble from '../components/FloatingBubble';
 import { useNavigate } from 'react-router-dom';
 
+type BubbleProject = {
+  id: number;
+  name: string;
+  url?: string;
+  path?: string;
+  gradient: string;
+  color?: string;
+  x?: number;
+  y?: number;
+};
+
 // FIU Brand Color Tokens
 const FIU = {
-  blue:       '#081E3F',
+  blue: '#081E3F',
   blueShade1: '#0A254E',
   blueShade2: '#0C2B5A',
-  gold:       '#B6862C',
+  gold: '#B6862C',
   brightGold: '#FFCC00',
-  magenta:    '#CC0066',
-  cyan:       '#00FFFF',
-  white:      '#FFFFFF',
+  magenta: '#CC0066',
+  cyan: '#00FFFF',
+  white: '#FFFFFF',
 };
 
 const BUBBLE_GRADIENTS = [
@@ -30,29 +39,53 @@ const BUBBLE_GRADIENTS = [
 
 const Index = () => {
   const navigate = useNavigate();
-  const [bubbles, setBubbles] = useState([]);
-  const [resetTrigger, setResetTrigger] = useState(0);
+  const [bubbles, setBubbles] = useState<BubbleProject[]>([]);
 
-  const projects = [
-    { id: 1, name: 'Sprinternship', url: 'https://webs.cs.fiu.edu/sprinternship/',                          gradient: BUBBLE_GRADIENTS[0] },
-    { id: 2, name: 'Partners',      url: 'https://webs.cs.fiu.edu/sprinternship/sprinternship-industry/',   gradient: BUBBLE_GRADIENTS[1] },
-    { id: 3, name: 'Sistas',        url: 'https://webs.cs.fiu.edu/sprinternship/sistas/',                   gradient: BUBBLE_GRADIENTS[2] },
-    { id: 4, name: 'Career Roadmap',url: 'https://webs.cs.fiu.edu/sprinternship/roadmap/',                  gradient: BUBBLE_GRADIENTS[3] },
-    { id: 5, name: 'Research',      url: 'https://webs.cs.fiu.edu/sprinternship/research/',                 gradient: BUBBLE_GRADIENTS[4] },
+  const projects: BubbleProject[] = [
+    {
+      id: 1,
+      name: 'Sprinternship',
+      url: 'https://webs.cs.fiu.edu/sprinternship/',
+      gradient: BUBBLE_GRADIENTS[0],
+    },
+    {
+      id: 2,
+      name: 'Partners',
+      url: 'https://webs.cs.fiu.edu/sprinternship/sprinternship-industry/',
+      gradient: BUBBLE_GRADIENTS[1],
+    },
+    {
+      id: 3,
+      name: 'Sistas',
+      url: 'https://webs.cs.fiu.edu/sprinternship/sistas/',
+      gradient: BUBBLE_GRADIENTS[2],
+    },
+    {
+      id: 4,
+      name: 'Career Roadmap',
+      url: 'https://webs.cs.fiu.edu/sprinternship/roadmap/',
+      gradient: BUBBLE_GRADIENTS[3],
+    },
+    {
+      id: 5,
+      name: 'Research',
+      url: 'https://webs.cs.fiu.edu/sprinternship/research/',
+      gradient: BUBBLE_GRADIENTS[4],
+    },
   ];
 
   useEffect(() => {
-    const newBubbles = projects.map(project => ({
+    const newBubbles = projects.map((project) => ({
       ...project,
       color: project.gradient,
       x: 10 + Math.random() * 80,
       y: 15 + Math.random() * 70,
     }));
+
     setBubbles(newBubbles);
-    setResetTrigger(Date.now());
   }, []);
 
-  const handleBubbleClick = (project) => {
+  const handleBubbleClick = (project: BubbleProject) => {
     if (project.url) {
       window.open(project.url, '_blank', 'noopener,noreferrer');
     } else if (project.path) {
@@ -61,16 +94,16 @@ const Index = () => {
   };
 
   return (
-  <div
-  className="min-h-screen overflow-hidden relative"
-  style={{
-    background: `
-    radial-gradient(ellipse at 20% 30%, ${FIU.blueShade2} 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 70%, #0D1F3C 0%, transparent 55%),
-    ${FIU.blue}
-    `,
-  }}
-  >
+    <div
+      className="min-h-screen overflow-hidden relative"
+      style={{
+        background: `
+          radial-gradient(ellipse at 20% 30%, ${FIU.blueShade2} 0%, transparent 55%),
+          radial-gradient(ellipse at 80% 70%, #0D1F3C 0%, transparent 55%),
+          ${FIU.blue}
+        `,
+      }}
+    >
       {/* ── Subtle geometric texture overlay ── */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -84,48 +117,80 @@ const Index = () => {
 
       {/* ── Gold accent glow blobs ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute rounded-full animate-pulse" style={{ width: 320, height: 320, top: '-80px', left: '-80px', background: `radial-gradient(circle, ${FIU.brightGold}22 0%, transparent 70%)` }} />
-        <div className="absolute rounded-full" style={{ width: 260, height: 260, bottom: '-60px', right: '-60px', background: `radial-gradient(circle, ${FIU.magenta}1A 0%, transparent 70%)`, animation: 'pulse 4s ease-in-out infinite 1s' }} />
-        <div className="absolute rounded-full" style={{ width: 180, height: 180, top: '40%', right: '5%', background: `radial-gradient(circle, ${FIU.cyan}15 0%, transparent 70%)`, animation: 'pulse 5s ease-in-out infinite 2s' }} />
-      </div>
-
-      {/* ── Navbar brand ── */}
-<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 w-[92vw] max-w-5xl px-4">
-  <div className="flex items-center justify-center md:justify-start">
-    <button
-      onClick={() => navigate('/')}
-      className="flex items-center gap-4 bg-transparent border-none cursor-pointer p-0 text-left"
-      aria-label="Go to homepage"
-    >
-      <img
-        src={fiuLogo}
-        alt="FIU KFSCIS logo"
-        className="h-14 sm:h-16 md:h-20 w-auto object-contain shrink-0"
-        style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
-      />
-
-      <div className="flex flex-col">
-        <p
-          className="mt-3 text-sm sm:text-base md:text-xl font-semibold uppercase"
-          style={{ color: FIU.brightGold, opacity: 0.85, letterSpacing: '0.12em' }}
-        >
-          Sprinternship™ — Our Partnership With Break Through Tech
-        </p>
-
-        {/* Gold underline bar */}
         <div
+          className="absolute rounded-full animate-pulse"
           style={{
-            height: 3,
-            borderRadius: 2,
-            background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
-            margin: '6px auto 0',
-            width: '70%',
+            width: 320,
+            height: 320,
+            top: '-80px',
+            left: '-80px',
+            background: `radial-gradient(circle, ${FIU.brightGold}22 0%, transparent 70%)`,
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: 260,
+            height: 260,
+            bottom: '-60px',
+            right: '-60px',
+            background: `radial-gradient(circle, ${FIU.magenta}1A 0%, transparent 70%)`,
+            animation: 'pulse 4s ease-in-out infinite 1s',
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: 180,
+            height: 180,
+            top: '40%',
+            right: '5%',
+            background: `radial-gradient(circle, ${FIU.cyan}15 0%, transparent 70%)`,
+            animation: 'pulse 5s ease-in-out infinite 2s',
           }}
         />
       </div>
-    </button>
-  </div>
-</div>
+
+      {/* ── Top centered brand ── */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 w-[92vw] max-w-5xl px-4">
+        <div className="flex flex-col items-center justify-center text-center">
+          <button
+            onClick={() => navigate('/')}
+            className="flex flex-col items-center gap-3 bg-transparent border-none cursor-pointer p-0 text-center"
+            aria-label="Go to homepage"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}fiu-kfscis-logo.png`}
+              alt="FIU KFSCIS logo"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
+            />
+
+            <div className="flex flex-col items-center">
+              <p
+                className="text-sm sm:text-base md:text-xl font-semibold uppercase text-center"
+                style={{
+                  color: FIU.brightGold,
+                  opacity: 0.85,
+                  letterSpacing: '0.12em',
+                }}
+              >
+                Sprinternship™ — Our Partnership With Break Through Tech
+              </p>
+
+              <div
+                className="mt-2"
+                style={{
+                  height: 3,
+                  borderRadius: 2,
+                  background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
+                  width: '70%',
+                }}
+              />
+            </div>
+          </button>
+        </div>
+      </div>
 
       {/* ── Floating project bubbles ── */}
       {bubbles.map((bubble) => (
@@ -140,12 +205,14 @@ const Index = () => {
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => {
           const colors = [FIU.brightGold, FIU.magenta, FIU.cyan, FIU.white];
+
           return (
             <div
               key={i}
               className="absolute rounded-full animate-ping"
               style={{
-                width: 4, height: 4,
+                width: 4,
+                height: 4,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 background: colors[i % colors.length],
