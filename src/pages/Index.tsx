@@ -167,6 +167,16 @@ const Index = () => {
               style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
             />
 
+            <div
+                className="mt-2"
+                style={{
+                  height: 3,
+                  borderRadius: 2,
+                  background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
+                  width: '70%',
+                }}
+              />
+
             <div className="flex flex-col items-center">
               <p
                 className="text-sm sm:text-base md:text-xl font-semibold uppercase text-center"
@@ -178,16 +188,6 @@ const Index = () => {
               >
                 Sprinternship™ — Our Partnership With Break Through Tech
               </p>
-
-              <div
-                className="mt-2"
-                style={{
-                  height: 3,
-                  borderRadius: 2,
-                  background: `linear-gradient(90deg, transparent, ${FIU.brightGold}, ${FIU.magenta}, transparent)`,
-                  width: '70%',
-                }}
-              />
             </div>
           </button>
         </div>
