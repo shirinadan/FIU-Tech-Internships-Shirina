@@ -79,8 +79,8 @@ const Index = () => {
     const newBubbles = projects.map((project) => ({
       ...project,
       color: project.gradient,
-      x: 10 + Math.random() * 80,
-      y: 15 + Math.random() * 70,
+      x: 18 + Math.random() * 64,
+      y: 34 + Math.random() * 38,
     }));
 
     setBubbles(newBubbles);
