@@ -96,7 +96,7 @@ const Index = () => {
 
   return (
     <div
-      className="min-h-screen overflow-hidden relative"
+      className="h-dvh overflow-hidden relative"
       style={{
         background: `
           radial-gradient(ellipse at 20% 30%, ${FIU.blueShade2} 0%, transparent 55%),
