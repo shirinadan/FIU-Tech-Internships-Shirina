@@ -103,7 +103,7 @@ const Index = () => {
             filter: 'drop-shadow(0 2px 24px rgba(255,204,0,0.18))',
           }}
         >
-          FIU Tech Internships
+          FIU KFSCIS
         </h1>
 
         {/* Gold underline bar */}
