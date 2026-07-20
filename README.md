@@ -37,11 +37,11 @@ Welcome to the documentation for the FIU Tech Internships website. This guide wi
 | [04 - Navigation & Routing](docs/04-navigation-routing.md) | Add new pages and update the menu |
 | [05 - Styling & Branding](docs/05-styling-branding.md) | Change colors, fonts, and layout |
 | [06 - Deployment](docs/06-deployment.md) | Push changes live to the internet |
-| [07 - Troubleshooting](docs/07-troubleshooting.md) | Solve common problems |
 
 ## Quick Reference
 
-- **Live Website**: [https://fiu-tech-internships.vercel.app/](https://fiu-tech-internships.vercel.app/)
+- **Live Website**: [https://fiu-tech-internships.vercel.app/](https://fiu-tech-internships.vercel.app/) 
+> **Note:** Change the link here after the project is moved to a different GitHub Owner
 - **GitHub Repository**: [https://github.com/KLAW4life/FIU-Tech-Internships](https://github.com/KLAW4life/FIU-Tech-Internships)
 - **Tech Stack**: React, TypeScript, Vite, Tailwind CSS
 
@@ -54,4 +54,4 @@ This documentation is designed for:
 
 ## Need Help?
 
-If you encounter issues not covered here, check the [Troubleshooting Guide](07-troubleshooting.md) or contact the repository maintainer.
+If you encounter issues not covered here, contact the repository maintainer.
