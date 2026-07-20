@@ -98,7 +98,7 @@ const Index = () => {
       aria-label="Go to homepage"
     >
       <img
-        src="FIU-Tech-Internships-Shirina\public\fiu-kfscis-logo.png" 
+        src="/public/fiu-kfscis-logo.png" 
         alt="FIU KFSCIS logo"
         className="h-14 sm:h-16 md:h-20 w-auto object-contain shrink-0"
         style={{ filter: `drop-shadow(0 0 14px ${FIU.brightGold}44)` }}
