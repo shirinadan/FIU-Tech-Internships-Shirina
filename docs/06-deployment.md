@@ -2,7 +2,7 @@
 
 This guide explains how to push your changes live to the internet.
 
-When you push code to GitHub, Vercel automatically detects the change and deploys the new version of your website.
+When you push code to GitHub, GitHub Actions automatically detects the change and deploys the new version of your website.
 
 ## Step-by-Step Deployment
 
@@ -38,16 +38,10 @@ git push origin main
 
 1. Go to your GitHub repository
 2. Look for a yellow dot or checkmark next to your commit
-3. Click "Actions" tab to see deployment progress. 
+3. Click the "Actions" tab to see deployment progress.  
 
-Or check Vercel directly:
-
-1. Go to `vercel.com`
-2. Sign in (use GitHub account)
-3. Find the "FIU-Tech-Internships" project
-4. See deployment status under "Deployments". 
-
-After 1-3 minutes, you can visit the site at [FIU Tech Internships] (https://fiu-tech-internships.vercel.app/).
+After 1-3 minutes, you can visit the site at [FIU Tech Internships] (https://fiu-tech-internships.vercel.app/). 
+> **Note:** Change the link here after the project is moved to a different GitHub Owner
 
 NB: Clear your browser cache if you don't see the changes.
 
@@ -85,13 +79,3 @@ git revert <commit-hash>
 # Push the revert
 git push origin main
 ```
-## Option 2: Rollback on Vercel
-
-1. Go to your project on vercel.com
-
-2. Click "Deployments"
-
-3. Find a working deployment
-
-4. Click the three dots (⋮) → "Promote to Production"
-
